@@ -1,0 +1,68 @@
+.dd-wrapper{
+    position: relative;
+    width: 270px;
+    font-size: 1.5rem;
+    user-select: none;
+    border-width: 0;
+    letter-spacing: .0825em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dd-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 3px;
+    background-color: transparent;
+    line-height: 38px;
+    cursor: default;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.dd-header-title{
+    align-self: flex-start;
+    margin: 2px 20px;
+    margin-right: 30px;
+    font-weight: 300;
+}
+
+span{
+    margin-right: 20px;
+}
+
+.dd-list{
+    position: flex;
+    z-index: 10;
+    width: 100%;
+    max-height: 200px;
+    background-color: transparent;
+    /* font-weight: 700; */
+    text-align: left;
+    -webkit-overflow-scrolling: touch;
+}
+
+button{
+    border-width: 1px;
+    display: inline-block;
+    border-color: rgb(223, 223, 223);
+    box-shadow: none;
+    border-style: solid;
+}
+
+.dd-list-item{
+    display: inline-block;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 10px;
+    line-height: 1.2rem;
+    text-overflow: ellipsis;
+    cursor: default;
+    text-align: left;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: white;
+}

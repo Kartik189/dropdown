@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import DropDown from './components/dropdown';
 
 function App() {
+
+  const colourVariants = [
+    {
+      id: 0,
+      colour: 'black',
+    },
+    {
+      id: 1,
+      colour: 'brown'
+    },
+    {
+      id: 2,
+      colour: 'red'
+    },
+    {
+      id: 3,
+      colour: 'purple'
+    },    
+    {
+      id: 4,
+      colour: 'pink'
+    }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <DropDown data={colourVariants}/>
     </div>
   );
 }
