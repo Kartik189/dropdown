@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div>
-      <DropDown data={colourVariants}/>
+      <DropDown data={colourVariants} />
     </div>
   );
 }
