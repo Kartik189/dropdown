@@ -1,12 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
 import './dropdown.styles.css';
-import FontAwesome from 'react-fontawesome';
+import arrowUp from '../assets/arrowUp.svg';
+import arrowDown from '../assets/arrowDown.svg';
+import black from '../assets/colours/black.webp';
 
 function DropDown({data}) {
 
     const [ open , toggleOpen ] = useState(false);
     const [ selectedItemColor , setColor ] = useState('black');
+    const [ selectedImage , setImage ] = useState(black);
 
     function toggleList() {
         toggleOpen(open => !open);
@@ -15,17 +18,18 @@ function DropDown({data}) {
     function selectItem (item) {
         toggleList();
         setColor(selectedItemColor => item.colour);
+        setImage(selectedImage => item.url);
     }
 
     return(
         <div className="dd-wrapper">
             <button className="dd-header" type="button" onClick={toggleList}>
                 <div className="dd-header-title">
-                    <div classname="leading-box" style={{ height: '15px' , width: '15px' , backgroundColor: 'black' , display: 'inline-block', marginRight: '16px'}}></div>
+                    <img src={selectedImage} alt="color-variants" className="color-image"/>
                     <span>{selectedItemColor}</span>
                 </div>
                 {
-                    open ? <FontAwesome name="angle-up" size="1x" /> : <FontAwesome name="angle-down" size="1x" />
+                    open ? <img className="toggle-button" src={arrowUp} alt="toggle-button" /> : <img className="toggle-button" src={arrowDown} alt="toggle-button" />
                 }
             </button>
             {
@@ -35,7 +39,7 @@ function DropDown({data}) {
                         data.map((item) => {
                             return(
                                 <button type="button" key={item.id} className="dd-list-item" onClick={() => selectItem(item)}>
-                                    <div classname="leading-box" style={{ height: '15px' , width: '15px' , backgroundColor: 'black' , display: 'inline-block', marginRight: '16px', marginLeft: '16px'}}></div>
+                                    <img src={item.url} alt="color-variants" className="color-image"/>
                                     <span>{item.colour}</span>
                                 </button>
                                 )

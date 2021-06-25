@@ -1,28 +1,31 @@
-import './App.css';
 import DropDown from './components/dropdown';
+import black from './assets/colours/black.webp';
+import grey from './assets/colours/grey.webp';
+import lightblue from './assets/colours/lightblue.webp';
+import white from './assets/colours/white.webp';
 
 function App() {
 
   const colourVariants = [
     {
-      id: 0,
-      colour: 'black',
-    },
-    {
       id: 1,
-      colour: 'brown'
+      colour: 'black',
+      url: black
     },
     {
       id: 2,
-      colour: 'red'
+      colour: 'grey',
+      url: grey
     },
     {
       id: 3,
-      colour: 'purple'
-    },    
+      colour: 'light blue',
+      url: lightblue
+    },
     {
       id: 4,
-      colour: 'pink'
+      colour: 'white',
+      url: white
     }
   ]
 
