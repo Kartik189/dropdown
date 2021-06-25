@@ -4,12 +4,15 @@ import './dropdown.styles.css';
 import arrowUp from '../assets/arrowUp.svg';
 import arrowDown from '../assets/arrowDown.svg';
 import black from '../assets/colours/black.webp';
+import onClickOutside from 'react-onclickoutside';
 
 function DropDown({data}) {
 
     const [ open , toggleOpen ] = useState(false);
     const [ selectedItemColor , setColor ] = useState('black');
     const [ selectedImage , setImage ] = useState(black);
+
+    DropDown.handleClickOutside = () => toggleOpen(false);
 
     function toggleList() {
         toggleOpen(open => !open);
@@ -53,4 +56,8 @@ function DropDown({data}) {
     )
 }
 
-export default DropDown;
+const clickOutsideConfig = {
+    handleClickOutside : () => DropDown.handleClickOutside,
+};
+
+export default onClickOutside(DropDown,clickOutsideConfig);
