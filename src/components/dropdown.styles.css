@@ -78,4 +78,5 @@ button{
     width: 20px;
     margin-right: 20px;
     margin-left: 10px;
+    border: 1.5px solid rgb(223, 223, 223);
 }
